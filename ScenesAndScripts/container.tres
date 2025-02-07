@@ -1,0 +1,31 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dd2bm2fq8538"]
+
+[ext_resource type="FontFile" uid="uid://b3a6kp0vm4e0i" path="res://Art/Fonts/static/Montserrat-Regular.ttf" id="1_uakwu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tl02b"]
+bg_color = Color(0.0392157, 0.168627, 0.215686, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3mt5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gkuqu"]
+
+[resource]
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
+Panel/styles/panel = SubResource("StyleBoxFlat_tl02b")
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_r3mt5")
+TextEdit/colors/selection_color = Color(1, 1, 1, 1)
+TextEdit/font_sizes/font_size = 32
+TextEdit/fonts/font = ExtResource("1_uakwu")
+TextEdit/styles/normal = SubResource("StyleBoxEmpty_gkuqu")
