@@ -16,7 +16,8 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3mt5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gkuqu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y37w4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [resource]
 MarginContainer/constants/margin_bottom = 20
@@ -28,4 +29,4 @@ PanelContainer/styles/panel = SubResource("StyleBoxEmpty_r3mt5")
 TextEdit/colors/selection_color = Color(1, 1, 1, 1)
 TextEdit/font_sizes/font_size = 32
 TextEdit/fonts/font = ExtResource("1_uakwu")
-TextEdit/styles/normal = SubResource("StyleBoxEmpty_gkuqu")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_y37w4")

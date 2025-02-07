@@ -14,6 +14,7 @@ func _ready():
 	up_text.text = text1
 	down_text.text = text2
 	image.pivot_offset = Vector2(image.size.x / 2, image.size.y / 2)
+	custom_minimum_size = Vector2(get_window().size.x / 3.0, get_window().size.y)
 
 func _process(delta):
 	if image.is_hovered():
