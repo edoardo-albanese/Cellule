@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://vo1vds5hyf3"]
+
+[ext_resource type="FontFile" uid="uid://ne0da37c1kr0" path="res://Art/Fonts/static/Montserrat-Bold.ttf" id="1_mqjul"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_mqjul")
