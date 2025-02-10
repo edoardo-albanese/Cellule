@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbn2v57cf0mse"]
+[gd_scene load_steps=7 format=3 uid="uid://dbn2v57cf0mse"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/cellula.gd" id="1_74dlh"]
 [ext_resource type="Texture2D" uid="uid://bi2lh21wnaxig" path="res://icon.svg" id="1_h683v"]
 [ext_resource type="Theme" uid="uid://vo1vds5hyf3" path="res://ScenesAndScripts/h2.tres" id="1_vaf5c"]
+[ext_resource type="Theme" uid="uid://4mhcgqyv70ps" path="res://ScenesAndScripts/h1.tres" id="2_v3th2"]
+[ext_resource type="Theme" uid="uid://dd2bm2fq8538" path="res://ScenesAndScripts/container.tres" id="3_k5iv2"]
+[ext_resource type="Script" path="res://ScenesAndScripts/enlarger.gd" id="4_ixk88"]
 
 [node name="Cellula" type="Control"]
 layout_mode = 3
@@ -13,37 +16,90 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_74dlh")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Container" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="UpText" type="Label" parent="VBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="MarginContainer" type="MarginContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Title" type="Label" parent="Container/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_v3th2")
+text = "EUCARIOTE ANIMALE"
+horizontal_alignment = 1
+
+[node name="Notes" type="PanelContainer" parent="Container/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("3_k5iv2")
+
+[node name="Panel" type="Panel" parent="Container/MarginContainer/Notes"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/MarginContainer/Notes"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="Container/MarginContainer/Notes/MarginContainer"]
+layout_mode = 2
+placeholder_text = "Note..."
+wrap_mode = 1
+
+[node name="Center" type="VBoxContainer" parent="Container/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="UpText" type="Label" parent="Container/MarginContainer/Center"]
 layout_mode = 2
 theme = ExtResource("1_vaf5c")
 text = "PLACEHOLDER 1"
 horizontal_alignment = 1
 
-[node name="Image" type="TextureButton" parent="VBoxContainer"]
+[node name="Image" type="TextureButton" parent="Container/MarginContainer/Center"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("1_h683v")
 stretch_mode = 5
 
-[node name="DownText" type="Label" parent="VBoxContainer"]
+[node name="DownText" type="Label" parent="Container/MarginContainer/Center"]
 layout_mode = 2
 theme = ExtResource("1_vaf5c")
 text = "PLACEHOLDER 2"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Image" to="." method="_on_image_pressed"]
+[node name="Enlarger" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("4_ixk88")
+actor = NodePath("../Container")
+
+[connection signal="pressed" from="Container/MarginContainer/Center/Image" to="." method="_on_image_pressed"]
