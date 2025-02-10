@@ -24,14 +24,10 @@ func enlarge():
 	tween.tween_property(actor, "custom_minimum_size", max_size, duration).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(actor, "size", max_size, duration).set_ease(Tween.EASE_IN_OUT)
 
+
 func minimize():
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(actor, "global_position", normal_pos, duration).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(actor, "custom_minimum_size", normal_size, duration).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(actor, "size", normal_size, duration).set_ease(Tween.EASE_IN_OUT)
-
-func _process(delta):
-	if actor.is_visible_in_tree():
-		print("Posizione: ", actor.global_position)
-		print("Size: ", actor.size)

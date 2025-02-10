@@ -13,6 +13,10 @@ extends Control
 @onready var enlarger = $Enlarger
 @onready var container = $Container
 
+@onready var animation_player = $AnimationPlayer
+@onready var title = $Container/MarginContainer/Title
+
+
 func _ready():
 	up_text.text = text1
 	down_text.text = text2
@@ -32,6 +36,9 @@ func _process(delta):
 
 
 func _on_image_pressed():
+	Global.cell_type = type
 	Global.cell_clicked.emit()
 	enlarger.enlarge()
-	image.disabled = true
+	
+	title.text = text1 + " " + text2
+	animation_player.play("transition")

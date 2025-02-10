@@ -1,10 +1,143 @@
-[gd_scene load_steps=6 format=3 uid="uid://cskdaabmg6qee"]
+[gd_scene load_steps=9 format=3 uid="uid://cskdaabmg6qee"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/start_menu.gd" id="1_rruap"]
 [ext_resource type="Theme" uid="uid://4mhcgqyv70ps" path="res://ScenesAndScripts/h1.tres" id="1_x041a"]
 [ext_resource type="Theme" uid="uid://cbltnk5o02lj8" path="res://ScenesAndScripts/sub_text.tres" id="2_3xt01"]
 [ext_resource type="Texture2D" uid="uid://crq8qwkp51b4b" path="res://Art/Background.png" id="2_8mpuf"]
 [ext_resource type="PackedScene" uid="uid://dbn2v57cf0mse" path="res://ScenesAndScripts/cellula.tscn" id="3_xhefl"]
+
+[sub_resource type="Animation" id="Animation_cws7h"]
+resource_name = "enter"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [3.14159, 6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/Cells/EucarioteAnimale:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/Cells/EucarioteVegetale:process_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/Cells/Procariote:process_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+
+[sub_resource type="Animation" id="Animation_eisty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/Cells/EucarioteAnimale:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/Cells/EucarioteVegetale:process_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/Cells/Procariote:process_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmd8p"]
+_data = {
+"RESET": SubResource("Animation_eisty"),
+"enter": SubResource("Animation_cws7h")
+}
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -33,6 +166,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 6.28319
+pivot_offset = Vector2(960, 540)
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
@@ -59,17 +194,26 @@ theme_override_constants/separation = 600
 alignment = 1
 
 [node name="EucarioteAnimale" parent="MarginContainer/Cells" instance=ExtResource("3_xhefl")]
+process_mode = 4
 layout_mode = 2
 text1 = "EUCARIOTE"
 text2 = "ANIMALE"
 
 [node name="EucarioteVegetale" parent="MarginContainer/Cells" instance=ExtResource("3_xhefl")]
+process_mode = 4
 layout_mode = 2
 text1 = "EUCARIOTE"
 text2 = "VEGETALE"
 type = 1
 
 [node name="Procariote" parent="MarginContainer/Cells" instance=ExtResource("3_xhefl")]
+process_mode = 4
 layout_mode = 2
 text1 = "PROCARIOTE"
 type = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fmd8p")
+}
+autoplay = "enter"
