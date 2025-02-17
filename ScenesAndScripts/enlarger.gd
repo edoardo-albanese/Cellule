@@ -15,7 +15,8 @@ func _ready():
 	normal_pos = actor.global_position
 
 func enlarge():
-	max_size = get_window().size
+	max_size = Vector2(1920,1080)
+	print(max_size)
 	central_pos = Vector2.ZERO
 	
 	var tween = create_tween()

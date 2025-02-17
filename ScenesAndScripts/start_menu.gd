@@ -36,3 +36,5 @@ func on_cell_clicked():
 			vegetale.process_mode = Node.PROCESS_MODE_DISABLED
 			tween.tween_property(animale, "modulate", Color(0,0,0,0), 0.2).set_ease(Tween.EASE_IN_OUT)
 			tween.tween_property(vegetale, "modulate", Color(0,0,0,0), 0.2).set_ease(Tween.EASE_IN_OUT)
+
+

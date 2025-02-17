@@ -1,6 +1,6 @@
 extends Node
 
-enum CELLULE {Animale, Vegetale, Procariote}
+enum CELLULE {Animale, Vegetale, Procariote, Unicellulare}
 
 signal cell_clicked()
 
