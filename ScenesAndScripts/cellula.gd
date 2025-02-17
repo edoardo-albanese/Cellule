@@ -42,3 +42,10 @@ func _on_image_pressed():
 	
 	title.text = text1 + " " + text2
 	animation_player.play("transition")
+
+
+func _on_back_button_pressed():
+	if image.disabled:
+		Global.back_clicked.emit()
+		enlarger.minimize()
+		animation_player.play("detransition")

@@ -4,5 +4,6 @@
 
 [resource]
 Label/colors/font_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = -30
 Label/font_sizes/font_size = 128
 Label/fonts/font = ExtResource("1_bcyx8")

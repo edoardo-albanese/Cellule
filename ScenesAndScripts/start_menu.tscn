@@ -68,6 +68,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [4]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/Cells/Unicellulare:process_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
 
 [sub_resource type="Animation" id="Animation_cws7h"]
 resource_name = "enter"
@@ -132,6 +144,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [4, 0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/Cells/Unicellulare:process_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fmd8p"]
 _data = {
@@ -190,7 +214,7 @@ text = "Versione 0.1 - Edoardo Albanese"
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 600
+theme_override_constants/separation = 450
 alignment = 1
 
 [node name="EucarioteAnimale" parent="MarginContainer/Cells" instance=ExtResource("3_xhefl")]
@@ -218,6 +242,7 @@ process_mode = 4
 layout_mode = 2
 text1 = "EUCARIOTE"
 text2 = "UNICELLULARE"
+type = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

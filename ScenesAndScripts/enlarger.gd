@@ -16,8 +16,8 @@ func _ready():
 
 func enlarge():
 	max_size = Vector2(1920,1080)
-	print(max_size)
 	central_pos = Vector2.ZERO
+	normal_pos = actor.global_position
 	
 	var tween = create_tween()
 	tween.set_parallel(true)
