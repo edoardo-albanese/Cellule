@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbn2v57cf0mse"]
+[gd_scene load_steps=15 format=3 uid="uid://dbn2v57cf0mse"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/cellula.gd" id="1_74dlh"]
 [ext_resource type="Texture2D" uid="uid://bi2lh21wnaxig" path="res://icon.svg" id="1_h683v"]
@@ -7,6 +7,9 @@
 [ext_resource type="Theme" uid="uid://dd2bm2fq8538" path="res://ScenesAndScripts/container.tres" id="3_k5iv2"]
 [ext_resource type="Script" path="res://ScenesAndScripts/enlarger.gd" id="4_ixk88"]
 [ext_resource type="Texture2D" uid="uid://f6771cviigwa" path="res://Art/BackButton.svg" id="6_tujx7"]
+[ext_resource type="Script" path="res://ScenesAndScripts/zoomer.gd" id="7_1hxuo"]
+[ext_resource type="AudioStream" uid="uid://bav0qqpf36176" path="res://Art/Sounds/uiPositive.mp3" id="9_pdty1"]
+[ext_resource type="AudioStream" uid="uid://nd41jov5i4vu" path="res://Art/Sounds/uiNegative.mp3" id="10_4nqex"]
 
 [sub_resource type="Animation" id="Animation_6bl8d"]
 length = 0.001
@@ -585,9 +588,22 @@ disabled = true
 texture_normal = ExtResource("6_tujx7")
 stretch_mode = 5
 
+[node name="Zoomer" type="Node" parent="Container/MarginContainer/BackButton" node_paths=PackedStringArray("actor")]
+script = ExtResource("7_1hxuo")
+actor = NodePath("..")
+multiplier = 1.2
+
 [node name="Enlarger" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("4_ixk88")
 actor = NodePath("../Container")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Open" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("9_pdty1")
+
+[node name="Close" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("10_4nqex")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

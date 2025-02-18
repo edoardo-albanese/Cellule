@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cj3pagw3p3mgl"]
 
-[ext_resource type="Texture2D" uid="uid://3740dyrfbsta" path="res://Art/Background.svg" id="1_aqgdg"]
 [ext_resource type="Script" path="res://ScenesAndScripts/background.gd" id="1_vxe5v"]
 [ext_resource type="PackedScene" uid="uid://c3qqkun42egol" path="res://ScenesAndScripts/cell.tscn" id="2_e5nuj"]
-[ext_resource type="Texture2D" uid="uid://ch2pueviog6qa" path="res://Art/Foreground.svg" id="2_rtclu"]
+[ext_resource type="Texture2D" uid="uid://3740dyrfbsta" path="res://Art/Background/Background.svg" id="3_2x3pg"]
+[ext_resource type="Texture2D" uid="uid://ch2pueviog6qa" path="res://Art/Background/Foreground.svg" id="4_ava2l"]
 
 [sub_resource type="Shader" id="Shader_278ou"]
 code = "shader_type canvas_item;
@@ -78,7 +78,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_aqgdg")
+texture = ExtResource("3_2x3pg")
 
 [node name="Foreground" type="TextureRect" parent="."]
 layout_mode = 1
@@ -87,4 +87,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_rtclu")
+texture = ExtResource("4_ava2l")

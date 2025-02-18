@@ -16,6 +16,8 @@ extends Control
 @onready var animation_player = $AnimationPlayer
 @onready var title = $Container/MarginContainer/Title
 
+@onready var open = $Sounds/Open
+@onready var close = $Sounds/Close
 
 func _ready():
 	up_text.text = text1
@@ -39,6 +41,7 @@ func _on_image_pressed():
 	Global.cell_type = type
 	Global.cell_clicked.emit()
 	enlarger.enlarge()
+	open.play()
 	
 	title.text = text1 + " " + text2
 	animation_player.play("transition")
@@ -49,3 +52,4 @@ func _on_back_button_pressed():
 		Global.back_clicked.emit()
 		enlarger.minimize()
 		animation_player.play("detransition")
+		close.play()

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 var sprites = [
-	preload("res://Art/cell1.svg"),
-	preload("res://Art/cell2.svg"),
-	preload("res://Art/cell3.svg")
+	preload("res://Art/Background/cell1.svg"),
+	preload("res://Art/Background/cell2.svg"),
+	preload("res://Art/Background/cell3.svg")
 ]
 
 @onready var sprite = $Sprite
