@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://ScenesAndScripts/start_menu.gd" id="1_rruap"]
 [ext_resource type="Theme" uid="uid://4mhcgqyv70ps" path="res://ScenesAndScripts/h1.tres" id="1_x041a"]
 [ext_resource type="Theme" uid="uid://cbltnk5o02lj8" path="res://ScenesAndScripts/sub_text.tres" id="2_3xt01"]
-[ext_resource type="Texture2D" uid="uid://crq8qwkp51b4b" path="res://Art/Background.png" id="2_8mpuf"]
+[ext_resource type="PackedScene" uid="uid://cj3pagw3p3mgl" path="res://ScenesAndScripts/background.tscn" id="2_bwd7f"]
 [ext_resource type="PackedScene" uid="uid://dbn2v57cf0mse" path="res://ScenesAndScripts/cellula.tscn" id="3_xhefl"]
 
 [sub_resource type="Animation" id="Animation_eisty"]
@@ -172,16 +172,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rruap")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" parent="." instance=ExtResource("2_bwd7f")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_8mpuf")
-expand_mode = 1
-stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

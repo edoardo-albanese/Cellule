@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3qqkun42egol"]
+
+[ext_resource type="Script" path="res://Cell.gd" id="1_7d3qd"]
+[ext_resource type="Texture2D" uid="uid://u8ijnic4s20" path="res://Art/cell1.svg" id="2_kpb5f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oj6ql"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2g0u3"]
+
+[node name="Cell" type="CharacterBody2D"]
+script = ExtResource("1_7d3qd")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_oj6ql")
+texture = ExtResource("2_kpb5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2g0u3")
+disabled = true
