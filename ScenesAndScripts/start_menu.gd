@@ -10,6 +10,7 @@ extends Control
 var cells = []
 
 @onready var title = $MarginContainer/Title
+@onready var mute_button = $MarginContainer/MuteButton
 
 func _ready():
 	credits.text = "Versione " + ProjectSettings.get("application/config/version") + " - Edoardo Albanese"
@@ -38,6 +39,8 @@ func transition(except : int):
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(title, "modulate", Color(0,0,0,0), 0.2).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(mute_button, "modulate", Color(0,0,0,0), 0.2).set_ease(Tween.EASE_IN_OUT)
+	mute_button.disabled = true
 	for i in cells:
 		if cells.find(i) != except:
 			tween.tween_property(i, "modulate", Color(0,0,0,0), 0.2).set_ease(Tween.EASE_IN_OUT)
@@ -46,6 +49,8 @@ func detransition():
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(title, "modulate", Color(1,1,1,1), 0.25).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(mute_button, "modulate", Color(1,1,1,1), 0.25).set_ease(Tween.EASE_IN_OUT)
+	mute_button.disabled = false
 	for i in cells:
 		i.z_index = 0
 		tween.tween_property(i, "modulate", Color(1,1,1,1), 0.25).set_ease(Tween.EASE_IN_OUT)
