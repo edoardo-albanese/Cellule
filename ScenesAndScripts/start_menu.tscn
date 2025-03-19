@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://cskdaabmg6qee"]
 
-[ext_resource type="Script" path="res://ScenesAndScripts/start_menu.gd" id="1_rruap"]
+[ext_resource type="Script" uid="uid://v4wlfv4l6pfa" path="res://ScenesAndScripts/start_menu.gd" id="1_rruap"]
 [ext_resource type="Theme" uid="uid://4mhcgqyv70ps" path="res://ScenesAndScripts/h1.tres" id="1_x041a"]
 [ext_resource type="Theme" uid="uid://cbltnk5o02lj8" path="res://ScenesAndScripts/sub_text.tres" id="2_3xt01"]
 [ext_resource type="PackedScene" uid="uid://cj3pagw3p3mgl" path="res://ScenesAndScripts/background.tscn" id="2_bwd7f"]
 [ext_resource type="PackedScene" uid="uid://dbn2v57cf0mse" path="res://ScenesAndScripts/cellula.tscn" id="3_xhefl"]
 [ext_resource type="Texture2D" uid="uid://cf0up0bcxc4q8" path="res://Art/soundOn.svg" id="6_wlr1d"]
-[ext_resource type="Script" path="res://ScenesAndScripts/MuteButton.gd" id="7_ft4ea"]
+[ext_resource type="Script" uid="uid://cbeom0h3yb634" path="res://ScenesAndScripts/MuteButton.gd" id="7_ft4ea"]
 [ext_resource type="Texture2D" uid="uid://cjfm4rknvv4x7" path="res://Art/soundOff.svg" id="7_kwi78"]
-[ext_resource type="Script" path="res://ScenesAndScripts/zoomer.gd" id="7_p6x5d"]
+[ext_resource type="Script" uid="uid://darxlcb54ebkm" path="res://ScenesAndScripts/zoomer.gd" id="7_p6x5d"]
 [ext_resource type="AudioStream" uid="uid://ct0mrwc5vig7t" path="res://Art/Sounds/uiError.mp3" id="10_p5xrn"]
 
 [sub_resource type="Animation" id="Animation_eisty"]
@@ -164,8 +164,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fmd8p"]
 _data = {
-"RESET": SubResource("Animation_eisty"),
-"enter": SubResource("Animation_cws7h")
+&"RESET": SubResource("Animation_eisty"),
+&"enter": SubResource("Animation_cws7h")
 }
 
 [node name="StartMenu" type="Control"]
@@ -261,7 +261,7 @@ stream = ExtResource("10_p5xrn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_fmd8p")
+&"": SubResource("AnimationLibrary_fmd8p")
 }
 autoplay = "enter"
 

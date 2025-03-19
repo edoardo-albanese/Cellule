@@ -1,15 +1,51 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbn2v57cf0mse"]
+[gd_scene load_steps=23 format=3 uid="uid://dbn2v57cf0mse"]
 
-[ext_resource type="Script" path="res://ScenesAndScripts/cellula.gd" id="1_74dlh"]
+[ext_resource type="Script" uid="uid://hyldj4wxoi6" path="res://ScenesAndScripts/cellula.gd" id="1_74dlh"]
 [ext_resource type="Texture2D" uid="uid://bi2lh21wnaxig" path="res://icon.svg" id="1_h683v"]
 [ext_resource type="Theme" uid="uid://vo1vds5hyf3" path="res://ScenesAndScripts/h2.tres" id="1_vaf5c"]
 [ext_resource type="Theme" uid="uid://4mhcgqyv70ps" path="res://ScenesAndScripts/h1.tres" id="2_v3th2"]
-[ext_resource type="Theme" uid="uid://dd2bm2fq8538" path="res://ScenesAndScripts/container.tres" id="3_k5iv2"]
-[ext_resource type="Script" path="res://ScenesAndScripts/enlarger.gd" id="4_ixk88"]
+[ext_resource type="Script" uid="uid://d2rntjheuhgh3" path="res://ScenesAndScripts/DescriptionButton.gd" id="3_52ste"]
+[ext_resource type="Script" uid="uid://bo8l7l16ldv8w" path="res://ScenesAndScripts/enlarger.gd" id="4_ixk88"]
+[ext_resource type="FontFile" uid="uid://ne0da37c1kr0" path="res://Art/Fonts/static/Montserrat-Bold.ttf" id="5_4oli2"]
 [ext_resource type="Texture2D" uid="uid://f6771cviigwa" path="res://Art/BackButton.svg" id="6_tujx7"]
-[ext_resource type="Script" path="res://ScenesAndScripts/zoomer.gd" id="7_1hxuo"]
+[ext_resource type="Script" uid="uid://darxlcb54ebkm" path="res://ScenesAndScripts/zoomer.gd" id="7_1hxuo"]
+[ext_resource type="Theme" uid="uid://cbltnk5o02lj8" path="res://ScenesAndScripts/sub_text.tres" id="8_8vne1"]
 [ext_resource type="AudioStream" uid="uid://bav0qqpf36176" path="res://Art/Sounds/uiPositive.mp3" id="9_pdty1"]
 [ext_resource type="AudioStream" uid="uid://nd41jov5i4vu" path="res://Art/Sounds/uiNegative.mp3" id="10_4nqex"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlqih"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2kj2"]
+bg_color = Color(1, 1, 1, 0.12549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na4vr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71ano"]
+bg_color = Color(0.0431373, 0.239216, 0.301961, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fs5pe"]
+
+[sub_resource type="Theme" id="Theme_i4g5v"]
+Button/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 0)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0)
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("5_4oli2")
+Button/styles/focus = SubResource("StyleBoxEmpty_mlqih")
+Button/styles/hover = SubResource("StyleBoxFlat_d2kj2")
+Button/styles/normal = SubResource("StyleBoxFlat_na4vr")
+Panel/styles/panel = SubResource("StyleBoxFlat_71ano")
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_fs5pe")
 
 [sub_resource type="Animation" id="Animation_6bl8d"]
 length = 0.001
@@ -100,74 +136,86 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Container/MarginContainer/Notes:visible")
+tracks/7/path = NodePath("Container:anchors_preset")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [8]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Container:anchors_preset")
+tracks/8/path = NodePath("Container/MarginContainer/Center/Image:custom_minimum_size")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
+"update": 0,
+"values": [Vector2(128, 128)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Container/MarginContainer/Center/Image:custom_minimum_size")
+tracks/9/path = NodePath("Container/MarginContainer/BackButton:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(128, 128)]
+"update": 1,
+"values": [false]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Container/MarginContainer/BackButton:visible")
+tracks/10/path = NodePath("Container/MarginContainer/BackButton:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Container/MarginContainer/BackButton:modulate")
+tracks/11/path = NodePath("Container/MarginContainer/Center/Image:size")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(128, 128)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Container/MarginContainer/Center/Image:size")
+tracks/12/path = NodePath("Container/MarginContainer/Description:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Container/MarginContainer/Description:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(128, 128)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_u54ws"]
@@ -329,6 +377,30 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(384, 384), Vector2(128, 128)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Container/MarginContainer/Description:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Container/MarginContainer/Description:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_7ykny"]
 resource_name = "transition"
@@ -476,12 +548,36 @@ tracks/11/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Container/MarginContainer/Description:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Container/MarginContainer/Description:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0of13"]
 _data = {
-"RESET": SubResource("Animation_6bl8d"),
-"detransition": SubResource("Animation_u54ws"),
-"transition": SubResource("Animation_7ykny")
+&"RESET": SubResource("Animation_6bl8d"),
+&"detransition": SubResource("Animation_u54ws"),
+&"transition": SubResource("Animation_7ykny")
 }
 
 [node name="Cellula" type="Control"]
@@ -537,25 +633,6 @@ text = "EUCARIOTE ANIMALE"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Notes" type="PanelContainer" parent="Container/MarginContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme = ExtResource("3_k5iv2")
-
-[node name="Panel" type="Panel" parent="Container/MarginContainer/Notes"]
-custom_minimum_size = Vector2(600, 400)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Container/MarginContainer/Notes"]
-layout_mode = 2
-
-[node name="TextEdit" type="TextEdit" parent="Container/MarginContainer/Notes/MarginContainer"]
-layout_mode = 2
-placeholder_text = "Note..."
-wrap_mode = 1
-
 [node name="Center" type="VBoxContainer" parent="Container/MarginContainer"]
 layout_mode = 2
 alignment = 1
@@ -579,12 +656,80 @@ theme = ExtResource("1_vaf5c")
 text = "PLACEHOLDER 2"
 horizontal_alignment = 1
 
+[node name="Description" type="PanelContainer" parent="Container/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(600, 125)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = SubResource("Theme_i4g5v")
+
+[node name="Panel" type="Panel" parent="Container/MarginContainer/Description"]
+layout_mode = 2
+
+[node name="DescriptionButton" type="Button" parent="Container/MarginContainer/Description"]
+custom_minimum_size = Vector2(675, 0)
+layout_mode = 2
+text = "Descrizione della Cellula"
+script = ExtResource("3_52ste")
+
+[node name="Enlarger" type="Node" parent="Container/MarginContainer/Description/DescriptionButton" node_paths=PackedStringArray("actor")]
+script = ExtResource("4_ixk88")
+actor = NodePath("../..")
+duration = 0.25
+
+[node name="Content" type="MarginContainer" parent="Container/MarginContainer/Description"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/MarginContainer/Description/Content"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Container/MarginContainer/Description/Content/MarginContainer"]
+layout_mode = 2
+mouse_filter = 0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/MarginContainer/Description/Content/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="Container/MarginContainer/Description/Content/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_v3th2")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 40
+text = "DESCRIZIONE DELLA CELLULA"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="Container/MarginContainer/Description/Content/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("8_8vne1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "LOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum LOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsumLOREM ipsum"
+autowrap_mode = 2
+
+[node name="Image" type="TextureRect" parent="Container/MarginContainer/Description/Content/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="BackButton" type="TextureButton" parent="Container/MarginContainer"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-disabled = true
 texture_normal = ExtResource("6_tujx7")
 stretch_mode = 5
 
@@ -607,8 +752,10 @@ stream = ExtResource("10_4nqex")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_0of13")
+&"": SubResource("AnimationLibrary_0of13")
 }
 
 [connection signal="pressed" from="Container/MarginContainer/Center/Image" to="." method="_on_image_pressed"]
+[connection signal="pressed" from="Container/MarginContainer/Description/DescriptionButton" to="Container/MarginContainer/Description/DescriptionButton" method="_on_pressed"]
 [connection signal="pressed" from="Container/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Container/MarginContainer/BackButton" to="Container/MarginContainer/Description/DescriptionButton" method="_on_back_button_pressed"]

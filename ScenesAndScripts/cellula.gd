@@ -19,6 +19,8 @@ extends Control
 @onready var open = $Sounds/Open
 @onready var close = $Sounds/Close
 
+@onready var description_button: Button = $Container/MarginContainer/Description/DescriptionButton
+
 func _ready():
 	up_text.text = text1
 	down_text.text = text2
@@ -48,7 +50,7 @@ func _on_image_pressed():
 
 
 func _on_back_button_pressed():
-	if image.disabled:
+	if image.disabled and !description_button.disabled:
 		Global.back_clicked.emit()
 		enlarger.minimize()
 		animation_player.play("detransition")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3qqkun42egol"]
 
-[ext_resource type="Script" path="res://Cell.gd" id="1_7d3qd"]
+[ext_resource type="Script" uid="uid://clcvuadkb478s" path="res://Cell.gd" id="1_7d3qd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oj6ql"]
 

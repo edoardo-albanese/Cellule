@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Cellule"
-config/version="0.2"
+config/version="0.3"
 run/main_scene="res://ScenesAndScripts/start_menu.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
